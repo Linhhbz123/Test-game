@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Người Ngoài Cuộc 👽</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Người Ngoài Cuộc 👽</h1>
+
+        <div id="setup-screen">
+            <h2>1️⃣ Nhập số lượng & tên người chơi</h2>
+            <input type="number" id="playerCount" min="3" max="8" placeholder="3 - 8">
+            <button onclick="createNameInputs()">Tạo ô nhập tên</button>
+            <div id="nameInputs"></div>
+
+            <h2>2️⃣ Chọn chủ đề</h2>
+            <div id="topics">
+                <label><input type="checkbox" value="Hoa quả"> Hoa quả 🍊🍋🍉</label><br>
+                <label><input type="checkbox" value="Động vật"> Động vật 🐶🐱🐯</label><br>
+                <label><input type="checkbox" value="Đồ vật"> Đồ vật 🪑📱🕶️</label><br>
+            </div>
+
+            <button onclick="startGame()">Bắt đầu</button>
+        </div>
+
+        <div id="card-screen" class="hidden">
+            <h2 id="player-turn"></h2>
+            <div id="card" class="card">Tên người chơi</div>
+            <button id="nextBtn" onclick="nextPlayer()" class="hidden">Tiếp theo</button>
+        </div>
+        
+        <div id="vote-screen" class="hidden">
+            <h2>Thảo luận và Bỏ phiếu 👀</h2>
+            <p>Ai là kẻ khả nghi?</p>
+            <div id="player-options"></div>
+            <button onclick="submitVote()">Bình chọn</button>
+        </div>
+
+        <div id="result-screen" class="hidden">
+            <h2 id="result-message"></h2>
+            <button onclick="resetGame()">Chơi lại</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

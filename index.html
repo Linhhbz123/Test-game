@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Game Ngoài Cuộc</title>
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game">
+    <h1>🎭 Ai là người ngoài cuộc?</h1>
+
+    <!-- Tạo phòng -->
+    <div id="createRoom">
+      <button onclick="createRoom()">Tạo phòng mới</button>
+    </div>
+
+    <!-- Vào phòng -->
+    <div id="joinRoom">
+      <input id="roomCodeInput" placeholder="Nhập mã phòng">
+      <button onclick="joinRoom()">Vào phòng</button>
+    </div>
+
+    <!-- Mã phòng -->
+    <div id="roomInfo" class="hidden">
+      <p>Mã phòng: <span id="roomCode"></span></p>
+      <button onclick="startGame()">Bắt đầu game</button>
+    </div>
+
+    <!-- Từ khóa -->
+    <div id="keywordSection" class="hidden">
+      <h2>Từ khóa của bạn:</h2>
+      <p id="keyword"></p>
+    </div>
+  </div>
+
+  <!-- Gọi file JS -->
+  <script src="script.js"></script>
+</body>
+</html>

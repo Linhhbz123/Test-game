@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Người Ngoài Cuộc 👽</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="game-title">Người Ngoài Cuộc 👽</h1>
+
+        <div id="setup-screen" class="screen active">
+            <h2 class="section-title">1️⃣ Nhập số lượng & tên người chơi</h2>
+            <input type="number" id="playerCount" min="3" max="8" placeholder="3 - 8">
+            <button onclick="createNameInputs()">Tạo ô nhập tên</button>
+            <div id="nameInputs"></div>
+
+            <h2 class="section-title">2️⃣ Chọn chủ đề</h2>
+            <div id="topics">
+                <label><input type="checkbox" value="Hoa quả"> Hoa quả 🍊🍋🍉</label><br>
+                <label><input type="checkbox" value="Động vật"> Động vật 🐶🐱🐯</label><br>
+                <label><input type="checkbox" value="Đồ vật"> Đồ vật 🪑📱🕶️</label><br>
+            </div>
+
+            <button class="main-btn" onclick="startGame()">Bắt đầu</button>
+            <p id="error-message" class="error-message"></p>
+        </div>
+
+        <div id="card-screen" class="screen hidden">
+            <h2 id="player-turn"></h2>
+            <div id="card-container" class="card-container">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <p id="card-front-name">Tên người chơi</p>
+                        <p class="instruction">Nhấn và giữ để xem vai trò</p>
+                    </div>
+                    <div class="card-back">
+                        <p id="card-role"></p>
+                        <p id="card-content"></p>
+                    </div>
+                </div>
+            </div>
+            <button id="nextBtn" class="hidden" onclick="nextPlayer()">Tiếp theo</button>
+        </div>
+
+        <div id="vote-screen" class="screen hidden">
+            <h2 class="section-title">Thảo luận và Bỏ phiếu 👀</h2>
+            <p class="instruction">Ai là kẻ khả nghi?</p>
+            <div id="player-options"></div>
+            <button class="main-btn" onclick="submitVote()">Bình chọn</button>
+        </div>
+
+        <div id="result-screen" class="screen hidden">
+            <h2 id="result-message"></h2>
+            <button class="main-btn" onclick="resetGame()">Chơi lại</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

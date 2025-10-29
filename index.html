@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casino Neon - Tài Xỉu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="glow">NEON CASINO</h1>
+        <p>Điểm của bạn: <span id="score">0</span></p>
+
+        <div id="auth-section">
+            <input type="email" id="username" placeholder="Email">
+            <input type="password" id="password" placeholder="Mật khẩu" minlength="6"> 
+            
+            <p id="auth-message">Sẵn sàng...</p>
+
+            <div class="row">
+                <button id="loginBtn">Đăng Nhập</button>
+                <button id="registerBtn" class="ghost">Đăng Ký</button>
+            </div>
+        </div>
+
+        <div id="menu-section" class="hidden" hidden>
+            <p>Xin chào, <span id="displayName">Người chơi</span>!</p>
+            
+            <div class="menu-buttons">
+                <button id="btn-tx">Tài Xỉu (TX)</button>
+                <button id="btn-xd" class="ghost">Xóc Đĩa (Đang phát triển)</button>
+                <button id="btn-admin" class="ghost hidden">Quản Lý Người Dùng (Admin)</button>
+                <button id="logoutBtn" class="ghost">Đăng Xuất</button>
+            </div>
+        </div>
+
+        <div id="game-tx" class="hidden" hidden>
+            <h2>TÀI XỈU - SIC BO</h2>
+            <div class="game-box">
+                <p>Cược Tối thiểu: 10 điểm</p>
+                <input type="number" id="tx-bet-amount" placeholder="Nhập số điểm cược" value="100">
+                
+                <p id="tx-result">Lắc xúc xắc...</p>
+
+                <div class="game-buttons">
+                    <button id="bet-tai">Cược TÀI (11-17)</button>
+                    <button id="bet-xiu">Cược XỈU (3-10)</button>
+                </div>
+                <p id="tx-message">Hãy đặt cược của bạn.</p>
+            </div>
+            <button class="backBtn ghost">Quay lại Menu</button>
+        </div>
+
+        <div id="admin-section" class="hidden" hidden>
+            <h2>QUẢN LÝ NGƯỜI DÙNG</h2>
+            <div id="admin-users">Đang tải dữ liệu...</div>
+            <button class="backBtn ghost">Quay lại Menu</button>
+        </div>
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

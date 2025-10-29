@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+* { box-sizing: border-box; }
+
+html,body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at 20% 10%, #071126 0%, #000000 50%);
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+}
+
+/* Center container */
+.container {
+    width: min(420px, 94%);
+    margin: 6vh auto;
+    background: linear-gradient(180deg, rgba(10,10,18,0.85), rgba(6,6,10,0.7));
+    border-radius: 16px;
+    padding: 28px;
+    text-align: center;
+    box-shadow:
+        0 6px 30px rgba(0,0,0,0.6),
+        0 0 30px rgba(0,200,255,0.06);
+    border: 1px solid rgba(0,255,200,0.06);
+}
+
+/* Neon title */
+h1.glow {
+    margin: 0 0 18px;
+    font-size: 2.1rem;
+    letter-spacing: 1px;
+    color: #c7ffff;
+    text-shadow:
+        0 0 6px rgba(0,255,255,0.22),
+        0 0 18px rgba(0,120,255,0.08),
+        0 6px 18px rgba(0,0,0,0.6);
+}
+
+/* Inputs */
+input[type="email"], input[type="password"], input[type="number"] {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.03);
+    color: #eafcff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: box-shadow .18s, transform .12s;
+    text-align: center;
+}
+input:focus {
+    box-shadow: 0 0 12px rgba(0,255,255,0.12);
+    transform: translateY(-1px);
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(90deg, #00d4ff, #0057ff);
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: transform .12s ease, box-shadow .12s ease;
+    box-shadow: 0 6px 18px rgba(0,90,255,0.12);
+}
+button:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,120,255,0.16); }
+button:active { transform: translateY(-1px) scale(.995); }
+
+/* Secondary/ghost button */
+button.ghost {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #cfefff;
+    box-shadow: none;
+}
+
+/* Row for two auth buttons */
+.row { display:flex; gap:10px; justify-content:center; margin-top:6px; }
+.row button { flex:1; }
+
+/* Menu buttons vertical */
+.menu-buttons { display:flex; flex-direction:column; gap:12px; margin-top:12px; }
+
+/* Message */
+#auth-message { margin-top:10px; color:#ff9090; min-height:1.2em; }
+#tx-message { min-height:1.5em; margin-top:10px; }
+
+
+/* Score highlight */
+#score { color: #00ffff; font-weight:700; font-size:1.1rem; }
+
+/* Hidden helper */
+.hidden { display: none; }
+
+/* Small responsive */
+@media (max-width:420px) {
+    h1.glow { font-size: 1.6rem; }
+    .container { padding: 20px; }
+}
+/* Game section */
+.game-box {
+    margin-top: 20px;
+    animation: fadeIn 0.3s ease;
+    background: rgba(255,255,255,0.03);
+    border-radius: 12px;
+    padding: 15px;
+}
+.game-box p { margin: 8px 0; }
+.game-buttons { display: flex; gap: 10px; margin-top: 15px; }
+.game-buttons button { flex: 1; padding: 12px; font-size: 1.1rem;}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.97); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.backBtn {
+    margin-top: 16px;
+    font-size: 0.9rem;
+}
+
+/* Admin list */
+#admin-users {
+    text-align: left;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: inset 0 0 10px rgba(0,255,255,0.08);
+}
+
+#admin-users .admin-user-item {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0,255,255,0.08); 
+    margin-bottom: 12px;
+}
+#admin-users .admin-user-item:last-child {
+    border-bottom: none;
+}
+
+.admin-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 8px 0;
+}
+
+.admin-controls input, .admin-controls select {
+    padding: 6px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(0,255,255,0.1);
+    color: #fff;
+}
+.admin-controls select {
+    flex: 1; 
+    margin-right: 10px;
+    text-align: center;
+    width: auto !important; 
+    margin: 0 5px 0 0 !important;
+}
+.admin-controls input[type="number"] {
+     width: 80px !important;
+     margin: 0 5px !important;
+     text-align: center;
+}
+.admin-controls button {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+
+/* Tài Xỉu Specific */
+#tx-result {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #00ffff;
+    margin-bottom: 10px;
+    text-shadow: 0 0 8px rgba(0,255,255,0.4);
+}
+.dice-icons {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
